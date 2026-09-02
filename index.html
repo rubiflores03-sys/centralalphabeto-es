@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabeto - J.m.f. Comercio de Roupas LTDA</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --primary-dark: #357ABD;
+            --secondary: #FF6B6B;
+            --accent: #FFD166;
+            --bg-light: #F8F9FA;
+            --text-dark: #2B2D42;
+            --text-muted: #6C757D;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER / NAVBAR */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .site-link {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .site-link:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* HERO / TOP SERVICES SECTION */
+        .hero-services {
+            background: linear-gradient(135deg, #1A1C29 0%, #2B2D42 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(74, 144, 226, 0.2);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #FFF;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* MAIN CONTENT SECTION */
+        .main-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px dashed #E0E0E0;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .badge-active {
+            display: inline-block;
+            background-color: #E6F4EA;
+            color: #137333;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        /* CONTACT & LOCATION CTAS */
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 0.2rem;
+            transition: color 0.2s;
+        }
+
+        .contact-btn:hover {
+            color: var(--primary-dark);
+        }
+
+        .correspondence-box {
+            background-color: #F0F4F9;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            margin-top: 1rem;
+        }
+
+        .correspondence-box p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1A1C29;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .main-container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Alphabeto <span>J.M.F.</span></div>
+            <a href="https://www.alphabeto.com/" target="_blank" rel="noopener noreferrer" class="site-link">
+                Visite o Site Oficial <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- PRINCIPAIS SERVIÇOS (TOPO DA PÁGINA COM CRIATIVO MODERNO) -->
+    <section class="hero-services">
+        <h1 class="hero-title">Principais Serviços & Soluções</h1>
+        <p class="hero-subtitle">Excelência e inovação no comércio e confecção de vestuário infantojuvenil</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
+                <h3>Vestuário & Moda Infantil</h3>
+                <p>Criação, confecção e comercialização de coleções exclusivas com design alegre, confortável e focado no público infantojuvenil.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <h3>Vendas no Atacado & Varejo</h3>
+                <p>Atendimento especializado para venda direta ao consumidor final e distribuição corporativa em diversas regiões do país.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3>Distribuição & Logística Integrada</h3>
+                <p>Estrutura logística e operacional moderna para fornecimento ágil de produtos a partir da unidade fabril e filiais.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3>Gestão de Marcas & Franquias</h3>
+                <p>Desenvolvimento e expansão de rede de lojas com padronização de qualidade, atendimento diferenciado e forte presença no mercado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES CORPORATIVAS DA EMPRESA -->
+    <main class="main-container">
+        
+        <div class="section-header">
+            <h2>Informações de Registro & Contato</h2>
+        </div>
+
+        <div class="info-grid">
+            
+            <!-- CARD 1: DADOS CADASTRAIS -->
+            <div class="info-card">
+                <h3><i class="fa-solid fa-building"></i> Dados Cadastrais</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">Razão Social</span>
+                        <span class="info-value">J.m.f. Comercio de Roupas LTDA</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Nome Fantasia</span>
+                        <span class="info-value">Alphabeto</span>
+                    </li>
+                    <li>
+                        <span class="info-label">CNPJ</span>
+                        <span class="info-value">10.657.141/0027-74</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Inscrição Estadual (MG)</span>
+                        <span class="info-value">004046186.00-90</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Inscrição Estadual (SP)</span>
+                        <span class="info-value">813.025.096.115</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Natureza Jurídica</span>
+                        <span class="info-value">Sociedade Empresária Limitada</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CARD 2: SITUAÇÃO & ESTRUTURA -->
+            <div class="info-card">
+                <h3><i class="fa-solid fa-chart-line"></i> Situação & Estrutura</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">Situação Cadastral</span>
+                        <span class="info-value"><span class="badge-active">Ativa</span> (desde 13/05/2021)</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Tipo de Estabelecimento</span>
+                        <span class="info-value">Filial</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Data de Abertura</span>
+                        <span class="info-value">13/05/2021 (5 anos, 3 meses e 20 dias)</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Capital Social</span>
+                        <span class="info-value">R$ 11.200.000,00</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Porte da Empresa</span>
+                        <span class="info-value">Sem Enquadramento</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Opção pelo MEI</span>
+                        <span class="info-value">Não</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CARD 3: CONTATO E ENDEREÇO -->
+            <div class="info-card">
+                <h3><i class="fa-solid fa-location-dot"></i> Contato & Localização</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="info-label">E-mail</span>
+                        <a href="mailto:gerencial@alphabeto.com" class="contact-btn">
+                            <i class="fa-regular fa-envelope"></i> gerencial@alphabeto.com
+                        </a>
+                    </li>
+                    <li>
+                        <span class="info-label">Telefone</span>
+                        <a href="tel:3232616930" class="contact-btn">
+                            <i class="fa-solid fa-phone"></i> (32) 3261-6930
+                        </a>
+                    </li>
+                    <li>
+                        <span class="info-label">Logradouro</span>
+                        <span class="info-value">Rua Euvaldo Lodi, 156 - Bloco 1</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Bairro / CEP</span>
+                        <span class="info-value">Avenida - CEP: 36682-122</span>
+                    </li>
+                    <li>
+                        <span class="info-label">Município / Estado</span>
+                        <span class="info-value">São João Nepomuceno - Minas Gerais</span>
+                    </li>
+                </ul>
+
+                <div class="correspondence-box">
+                    <span class="info-label"><i class="fa-solid fa-box-archive"></i> Para Correspondência</span>
+                    <p>
+                        <strong>Alphabeto J.m.f. Comercio de Roupas LTDA</strong><br>
+                        Rua Euvaldo Lodi 156 Bloco 1<br>
+                        Avenida - São João Nepomuceno MG<br>
+                        CEP: 36682-122
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; Alphabeto J.m.f. Comercio de Roupas LTDA. Todos os direitos reservados.</p>
+        <p><a href="https://www.alphabeto.com/" target="_blank" style="color: var(--primary);">www.alphabeto.com</a></p>
+    </footer>
+
+</body>
+</html>
